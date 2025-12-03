@@ -1,0 +1,27 @@
+body {
+  background: linear-gradient(120deg, #141e30, #243b55);
+  min-height: 100vh;
+}
+
+body.light-mode {
+  background: linear-gradient(120deg, #f5f7fa, #c3cfe2);
+}
+
+.glass {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+body.light-mode .glass {
+  background: rgba(255,255,255,0.9);
+  color: #111;
+}
+
+#reader {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}

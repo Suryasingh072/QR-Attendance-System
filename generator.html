@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student QR Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- QR Code generator library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-dark px-3">
+  <span class="navbar-brand">Student QR Generator</span>
+  <a href="dashboard.html" class="btn btn-success btn-sm">Back to Dashboard</a>
+</nav>
+
+<div class="container py-4">
+
+  <div class="row g-3">
+
+    <!-- Add Student + Generate QR -->
+    <div class="col-md-5">
+      <div class="card glass p-4 text-center">
+        <h5>➕ Add Student & Generate QR</h5>
+
+        <input id="studentName" class="form-control mb-2" placeholder="Student Name">
+        <input id="rollNo" class="form-control mb-2" placeholder="Unique Roll No">
+
+        <button class="btn btn-primary w-100" onclick="generateQR()">Generate & Save</button>
+
+        <div id="qrcode" class="mt-3 d-flex justify-content-center"></div>
+      </div>
+    </div>
+
+    <!-- Student List -->
+    <div class="col-md-7">
+      <div class="card glass p-3">
+        <h5 class="text-center">📚 Student List</h5>
+        <ul id="studentList" class="list-group mt-2"></ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Parent QR Print Section -->
+  <div id="printSection" class="text-center mt-4" style="display:none;">
+    <h4>Student QR for Parent</h4>
+    <div id="printQR" class="d-flex justify-content-center my-3"></div>
+    <button class="btn btn-success" onclick="window.print()">Print QR</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
